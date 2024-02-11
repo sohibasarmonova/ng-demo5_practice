@@ -12,7 +12,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:  Colors.amber,
+       // backgroundColor:  Colors.amber,
+        //backgroundColor: Color.fromRGBO(0,127,255,1),
+        //backgroundColor: HexColor("#007FFF"),
         title: Text("Internation",style: TextStyle(
 
           color: Colors.black,
