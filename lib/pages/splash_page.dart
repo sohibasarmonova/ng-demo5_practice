@@ -38,15 +38,31 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromRGBO(193,53,132,1),
+              Color.fromRGBO(141,58,180,1),
+            ]
+          ),
+        ),
         padding: EdgeInsets.all(50),
-        color: Colors.white,
+        //color: Colors.white,
         child: Stack(
           children: [
             Center(
-              child: Image.asset(
-                "assets/images/ic_logo.png",
-                height: 80,width:100,
+              child:Text(
+                "Instagram",
+                style: TextStyle(
+                fontSize: 35,
+                fontFamily: "Billabong",
+                  color: Colors.white
+                ),
               ),
             ),
             Container(
@@ -58,8 +74,8 @@ class _SplashPageState extends State<SplashPage> {
                     child: Text(
                       "Powered by Fecbook",
                       style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 17
+                          color: Colors.white,
+                          fontSize: 20,
 
                       ),
                     ),

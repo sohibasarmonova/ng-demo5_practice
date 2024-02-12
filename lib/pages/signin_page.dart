@@ -24,143 +24,152 @@ class _SignInPageState extends State<SignInPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-      appBar: AppBar(
 
-      ),
       body: Container(
-        width: double.infinity,
+        
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromRGBO(193,53,132,1),
+                Color.fromRGBO(141,58,180,1),
+              ]
+          ),
+        ),
+       // width: double.infinity,
         padding: EdgeInsets.all(20),
+        
 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          
-          children: [
-            //#logopart
-            Text(
-              "Welcome !",
-              style: TextStyle(
-              //color: Colors.black,
-              fontSize: 35,
-              fontFamily: "Billabong",
-            ),
-            ),
-            Container(
-              width: double.infinity,
-              //padding: EdgeInsets.all(20),
-              //color: Colors.grey,
-             // margin: EdgeInsets.only(top: 10),
-              height: 40,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+
+         child: Column(
+
+           mainAxisAlignment: MainAxisAlignment.center,
+            children:[
+             Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                //mainAxisAlignment: MainAxisAlignment.center,
+
                 children: [
 
-                Text("Enter your phone number and password",style: TextStyle(color: Colors.black87),
-
-                ),
-                 // SizedBox(width: 10,),
-                ],
-
-              ),
-            ),
-
-
-            //#Emailpart
-            Container(
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.grey[200],
-
-              ),
-              child: TextField(
-                style: TextStyle(fontSize: 16),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(20),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.amberAccent),
-                    borderRadius: BorderRadius.circular(15)
-
+                  //#logopart
+                  Text(
+                    "Instagram",
+                    style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 50,
+                    fontFamily: "Billabong",
                   ),
-                  hintText: "+998(--)------",
-                  hintStyle: TextStyle(color: Colors.grey)
-                ),
-              ),
-            ),
-            //#password part
-            Container(
-              margin: EdgeInsets.only(top:10),
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.grey[200],
+                  ),
 
-              ),
-              child: TextField(
-                style: TextStyle(fontSize: 16),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(20),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.amberAccent),
-                      borderRadius: BorderRadius.circular(15)
-
+            const SizedBox(height: 30,),
+            
+                  //#Emailpart
+                  Container(
+                    //margin: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(left: 10,right: 10),
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white.withOpacity(0.2),
+            
                     ),
-                    hintText: "Password",
-                    hintStyle: TextStyle(color: Colors.grey)
-                ),
-              ),
-            ),
-
-
-
-              //#signButton
-
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 10),
-              height: 48,
-              child: MaterialButton(
-                color: Colors.amber,
-                onPressed: (){
-                  _callHomePage();
-
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)
-                ),
-                textColor: Colors.white,
-                child: Text("Sign In",style: TextStyle(fontSize: 16),),
-              ),
-
-            ),
-
-
-
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              height: 48,
-              //color: Colors.grey,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text("Don't have an account?",style: TextStyle(color: Colors.black87),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        hintText:"Email" ,
+                        border: InputBorder.none,
+            
+                        hintStyle: TextStyle(fontSize: 18,color: Colors.white54),
+            
+                      ),
+                    ),
                   ),
-                  SizedBox(width: 10,),
+                  //#password part
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(left: 10,right: 10),
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white.withOpacity(0.2),
+            
+                    ),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText:"Password" ,
+                        border: InputBorder.none,
+
+                        hintStyle: TextStyle(fontSize: 18,color: Colors.white54),
+            
+                      ),
+                    ),
+                  ),
+            
+                    //#signButton
+            
                   GestureDetector(
-                    child: Text("Sign Up",style: TextStyle(color: Colors.black,fontWeight:FontWeight.bold),
+                    onTap: _callHomePage,
+                    child: Container(
+                      width: double.infinity,
+                      margin: EdgeInsets.only(top: 10),
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                       borderRadius:BorderRadius.circular(15),
+                      ),
+                      child:Center(
+                        child:Text("Sign In",style: TextStyle(fontSize: 18,color: Colors.white),
+                      ),
                     ),
-                    onTap: (){
-                      _callSignUpPage();
-                    },
-                  )
-
-                ],
-              ),
-            ),
+                  ),
+                  ),
+            
 
 
-        ]
-      ),
-    ),
+                              Expanded(
+
+                               child: Column(
+                                 mainAxisAlignment: MainAxisAlignment.end, children: [
+                                    Container(
+
+                                      //  margin: EdgeInsets.only(top: 10),
+                                        height: 48,
+                                        child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text("Alredy have an account?",style: TextStyle(color: Colors.white),
+                                      ),
+                                      SizedBox(width: 10,),
+                                      GestureDetector(
+                                        child: Text("Sign Up",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold),
+                                        ),
+                                        onTap: (){
+                                          _callSignUpPage();
+                                        },
+                                      ),
+                                       ],
+                                      )
+                                      ),
+                                  ],
+                                ),
+                              ),
+
+
+
+
+            //
+                    ],
+                  ),
+           ),
+            ],
+       ),
+     ),
+
     );
   }
 }
